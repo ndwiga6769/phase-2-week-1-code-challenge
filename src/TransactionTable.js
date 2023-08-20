@@ -1,8 +1,23 @@
-import React from "react";
+import React, {useState} from "react";
+import Search from "./Search";
 
 function TransactionTable({transactionData}){
-    return(
+
+  const [mydata,setMydata] = useState('')
+  const filterTransaction = (e)=> {
+    e.preventDefault()
+    setMydata(e.target.value)
+  }
+    const updateTransactions = transactionData.filter((i)=>{
+if(mydata.length>0){
+  return i.description === mydata
+}else {
+  return false
+}
+    })
+  return(
         <>
+        <Search />
         <table id="myTable">
             <thead>
             <tr>

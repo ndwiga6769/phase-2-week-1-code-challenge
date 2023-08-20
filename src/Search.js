@@ -1,7 +1,7 @@
 function Search(){
     return(
        <>
-       
+         <input placeholder='search'/>
        </> 
     )
 }

@@ -16,8 +16,8 @@ function App() {
 
   return (
     <div className="App">
-     <Form transactionInfo = {transaction}/>
-     <Search />
+      <Search />
+     <Form transactionData = {transaction}/>
      <TransactionTable transactionData = {transaction} />
     </div>
   );

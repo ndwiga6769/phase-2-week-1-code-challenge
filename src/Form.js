@@ -1,6 +1,6 @@
-import, { useState } from "react"
+import React,{ useState } from "react"
 
-function Form({transaction}){
+function Form({}){
     const [date, setDate]= useState("")
 
     function addDate(event){
@@ -26,11 +26,27 @@ function Form({transaction}){
       setAmount(event.target.value)
     }
 
-    const [,setTransaction]=useState{[{transaction}]}
+    const [transaction,setTransaction]=useState([])
+    
+  function getTransaction(event){
+    event.preventDefault()
+
+    const  transactions = {
+      date: date,
+      description: Description,
+      category: Category,
+      amount: Amount
+    }
+
+   
+    console.log(transactions)
+    ///event.target.reset()
+  }
+  
 
 
     return(
-        <form>
+        <form onClick={getTransaction}>
          <input input type="date" placeholder='add date' onChange={addDate}/>
          <input placeholder='add Description' onChange={addDescription}/>
          <input placeholder='add category'onChange={addCategory}/>
