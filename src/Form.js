@@ -47,11 +47,12 @@ function Form({}){
 
     return(
         <form onClick={getTransaction}>
-         <input input type="date" placeholder='add date' onChange={addDate}/>
-         <input placeholder='add Description' onChange={addDescription}/>
-         <input placeholder='add category'onChange={addCategory}/>
+            <h3>UPDATE TRANSACTIONS</h3>
+         <input input type="date" placeholder='add date' onChange={addDate}/><br></br>
+         <input placeholder='add Description' onChange={addDescription}/><br></br>
+         <input placeholder='add category'onChange={addCategory}/><br></br>
          <input placeholder='add amount'onChange={addAmount}/>
-
+         <br></br>
          <button >Submit</button>
       </form>
     )

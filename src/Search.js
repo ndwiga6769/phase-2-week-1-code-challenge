@@ -1,8 +1,6 @@
-function Search(){
+function Search({myTransaction}){
     return(
-       <>
-         <input placeholder='search'/>
-       </> 
+         <input type="text" placeholder='SEARCH' onChange={myTransaction}/>
     )
 }
 export default Search;

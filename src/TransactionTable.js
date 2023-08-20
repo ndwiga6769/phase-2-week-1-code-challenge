@@ -3,21 +3,22 @@ import Search from "./Search";
 
 function TransactionTable({transactionData}){
 
-  const [mydata,setMydata] = useState('')
-  const filterTransaction = (e)=> {
-    e.preventDefault()
-    setMydata(e.target.value)
+  const [mydata,setMydata] = useState([])
+
+  function filterTransaction(event){
+    event.preventDefault()
+    setMydata(event.target.value)
   }
     const updateTransactions = transactionData.filter((i)=>{
-if(mydata.length>0){
-  return i.description === mydata
+if(mydata === ""){
+  return true
 }else {
-  return false
+  return i.description.includes(Search)
 }
     })
   return(
         <>
-        <Search />
+        <Search myTransaction = {filterTransaction}/>
         <table id="myTable">
             <thead>
             <tr>
