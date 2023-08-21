@@ -13,13 +13,13 @@ function TransactionTable({transactionData}){
 if(mydata === ""){
   return true
 }else {
-  return i.description.includes(Search)
+  return i.description.includes(mydata)
 }
     })
   return(
         <>
         <h4>Search Form</h4>
-        <Search myTransaction = {filterTransaction}/>
+        <Search  myTransaction = {filterTransaction}/>
         <br></br>
         <br></br>
         <table id="myTable">
@@ -32,12 +32,12 @@ if(mydata === ""){
             </tr>
             </thead>
       <tbody>
-        {updateTransactions.map((transaction) => (
-          <tr key={transaction.id}>
-            <td>{transaction.date}</td>
-            <td>{transaction.description}</td>
-            <td>{transaction.category}</td>
-            <td>{transaction.amount}</td>
+        {updateTransactions.map((transactionData) => (
+          <tr key={transactionData.id}>
+            <td>{transactionData.date}</td>
+            <td>{transactionData.description}</td>
+            <td>{transactionData.category}</td>
+            <td>{transactionData.amount}</td>
           </tr>
         ))}
       </tbody>

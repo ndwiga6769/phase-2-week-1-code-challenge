@@ -1,57 +1,58 @@
 import React,{ useState } from "react"
 
-function Form({}){
+function Form(){
     const [date, setDate]= useState("")
 
     function addDate(event){
       event.preventDefault()
       setDate(event.target.value)
     }
-    const [Description, setDescription]= useState("")
+    const [description, setDescription]= useState("")
 
     function addDescription(event){
       event.preventDefault()
       setDescription(event.target.value)
     }
-    const [Category, setCategory]= useState("")
+    const [category, setCategory]= useState("")
 
     function addCategory(event){
       event.preventDefault()
       setCategory(event.target.value)
     }
-    const [Amount, setAmount]= useState("")
+    const [amount, setAmount]= useState("")
 
     function addAmount(event){
       event.preventDefault()
       setAmount(event.target.value)
     }
 
-    const [transaction,setTransaction]=useState([])
+    const [ form, setForm]=useState([])
     
   function getTransaction(event){
-    event.preventDefault()
+    event.preventDefault();
 
-    const  transactions = {
+    let  object = {
       date: date,
-      description: Description,
-      category: Category,
-      amount: Amount
+      description: description,
+      category: category,
+      amount: amount
     }
-    //event.target.reset()
    
-    console.log(transactions)
+   let newObject = [...form, object]
+   setForm(newObject)
+    console.log(object);
     ///event.target.reset()
   }
   
 
 
     return(
-        <form onClick={getTransaction}>
+        <form onSubmit={getTransaction}>
             <h3>UPDATE TRANSACTIONS</h3>
-         <input input type="date" placeholder='add date' onChange={addDate}/><br></br>
-         <input placeholder='add Description' onChange={addDescription}/><br></br>
-         <input placeholder='add category'onChange={addCategory}/><br></br>
-         <input placeholder='add amount'onChange={addAmount}/>
+         <input input type="date" placeholder='add date' onChange={(event)=>addDate (event)}/><br></br>
+         <input placeholder='add Description' onChange={(event)=>addDescription (event)}/><br></br>
+         <input placeholder='add category'onChange={(event)=>addCategory (event)}/><br></br>
+         <input placeholder='add amount'onChange={(event)=>addAmount (event)}/>
          <br></br>
          <button >Submit</button>
       </form>
