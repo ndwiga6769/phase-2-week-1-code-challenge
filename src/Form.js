@@ -37,7 +37,7 @@ function Form({}){
       category: Category,
       amount: Amount
     }
-
+    //event.target.reset()
    
     console.log(transactions)
     ///event.target.reset()

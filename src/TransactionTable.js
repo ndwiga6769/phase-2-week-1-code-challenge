@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function TransactionTable({transactionData}){
 
-  const [mydata,setMydata] = useState([])
+  const [mydata,setMydata] = useState('')
 
   function filterTransaction(event){
     event.preventDefault()
@@ -18,7 +18,10 @@ if(mydata === ""){
     })
   return(
         <>
+        <h4>Search Form</h4>
         <Search myTransaction = {filterTransaction}/>
+        <br></br>
+        <br></br>
         <table id="myTable">
             <thead>
             <tr>
@@ -29,7 +32,7 @@ if(mydata === ""){
             </tr>
             </thead>
       <tbody>
-        {transactionData.map((transaction) => (
+        {updateTransactions.map((transaction) => (
           <tr key={transaction.id}>
             <td>{transaction.date}</td>
             <td>{transaction.description}</td>

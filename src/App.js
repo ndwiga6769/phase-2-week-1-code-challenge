@@ -2,7 +2,6 @@ import React, {useState,useEffect} from 'react'
 import './App.css';
 import TransactionTable from './TransactionTable';
 import Form from './Form';
-import Search from './Search';
 
 function App() {
   const [transaction, setTransaction] = useState([])
